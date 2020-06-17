@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm mới khách hàng</title>
+</head>
+
+<body>
+    <form action="/customer/save" method="post" th:object="${customer}">
+        <input type="text" th:field="${customer.firstName}" placeholder="Tên">
+        <input type="text" th:field="${customer.lastName}" placeholder="Họ">
+        <select name="provinceId">
+            <option th:each="p:${provinces}" th:value="${p.id}" th:text="${p.name}"></option>
+        </select>
+        <input type="submit" value="Thêm">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách tỉnh thành</title>
+</head>
+
+<body>
+    <a href="/province/create">Thêm mới tỉnh thành</a>
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Tên tỉnh thành</th>
+        </thead>
+        <tbody>
+            <tr th:each="p,iterStat:${provinces}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${p.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
